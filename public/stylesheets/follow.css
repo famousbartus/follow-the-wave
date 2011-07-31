@@ -1,0 +1,303 @@
+@charset "utf-8";
+/* CSS Document */
+
+h3 {
+	padding-top: 30px;
+	padding-left: 20px;
+}
+a:link, a:visited {
+  color:#FFF;
+  text-decoration:none;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size:16px;
+}
+
+a:hover {
+  color:#000;
+}
+
+body {
+  margin: 0 0 0 0;
+  background-color:#0789C3;
+  width:100%;
+  height:100%;
+  background-image:url(../images/background.png);
+  background-repeat:no-repeat;
+  background-position:left bottom;
+  background-attachment:fixed;
+  color:#FFF;
+  text-decoration:none;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size:14px;
+}
+
+#menu {
+	clear:both;
+	background-image: url(../images/menuBackground.png);
+	background-position:top left;
+	background-repeat:repeat-x;
+}
+
+ul{
+  padding-left:0px;
+  margin-left:20px;
+  padding-right:0px;
+	padding-bottom: 50px;
+	padding-top:10px;
+}
+
+li{
+  list-style:none;
+  float:left;
+  margin-right:30px;
+}
+
+.container{
+	clear:both;
+  position:relative;
+  margin:0;
+  width:98%;
+}
+
+.gallery{
+  width:auto;
+  z-index:5;
+  height:160px;
+  margin-left: 0px; 
+}
+
+.gallery img {
+  margin-left:20px;
+  width: 110px; height: 110px; /* Set the small thumbnail size */
+  -ms-interpolation-mode: bicubic; /* IE Fix for Bicubic Scaling */
+  float: left;
+  margin-top: 25px;
+  border:none;
+  -moz-box-shadow:0px 0px 6px #003366;
+  -webkit-box-shadow:0px 0px 6px #003366;
+  box-shadow:0px 0px 6px #003366;
+}
+
+.prev_button{
+	width:30px;
+  height: 50px;
+  border: none;
+  z-index:1;
+  position:absolute;
+  left: 40px;
+  bottom: 50px;
+  background-image: url(../images/leftButton/leftButton.png);
+  background-position:left top;
+  background-repeat:no-repeat;
+}
+
+.next_button{
+	width:30px;
+	height: 50px;
+  border: none;
+  z-index:1;
+  position:absolute;
+  right: 50px;
+  bottom: 50px;
+	background-image: url(../images/rightButton/rightButton.png);
+  background-position:left top;
+  background-repeat:no-repeat;
+}
+
+#logo{
+  margin-left:10px;
+  margin-top:10px;
+	float:left;
+	padding-bottom: 20px;
+}
+
+.content{
+  clear:both;
+  margin-left:20px;
+  margin-top: 20px;
+  margin-right:20px;
+  margin-bottom: 35px;
+  min-height: 30px;
+  background: rgb(7, 137, 195);
+  background: rgba(7, 137, 195, 0.75);
+}
+
+.header {
+  margin-left:10px;
+  margin-top:-10px;
+	margin-bottom:-20px;
+	z-index:10;
+}
+
+.wave {
+  margin: 50px 30px 50px 80px;
+}
+
+.horizontal-line {
+  height:0.5px;
+	width:95%;
+	background-color:#FFF;
+}
+
+#fade { /*--Transparent background layer--*/
+  display: none; /*--hidden by default--*/
+  background: #000;
+  position: fixed; left: 0; top: 0;
+  width: 100%; height: 100%;
+  opacity: .80;
+  z-index: 101;
+}
+
+.popup_block{
+  display: none; /*--hidden by default--*/
+  padding: 20px;
+  float: left;
+  font-size: 1.2em;
+  position: fixed;
+  top: 55%; left: 50%;
+  z-index: 99999;
+  /*--CSS3 Box Shadows--*/
+  -webkit-box-shadow: 0px 0px 20px #000;
+  -moz-box-shadow: 0px 0px 20px #000;
+  box-shadow: 0px 0px 20px #000;
+}
+
+img.btn_close {
+  float: right;
+  border:none;
+  margin: -5px -5px 0 0;
+}
+
+/*--Making IE6 Understand Fixed Positioning--*/
+*html #fade {
+  position: absolute;
+}
+
+*html .popup_block {
+  position: absolute;
+}
+
+/*--Dialog--*/
+/* Overlays */
+.ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.ui-widget-overlay { background-color: #000000; opacity: .70;filter:Alpha(Opacity=70); }
+.ui-widget-shadow { margin: -5px 0 0 -5px; padding: 5px; background-color: #000000; opacity: .20;filter:Alpha(Opacity=20); -moz-border-radius: 5px; -khtml-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }/*
+
+/*
+  root element for the scrollable.
+  when scrolling occurs this element stays still.
+*/
+.scrollable {
+  /* required settings */
+  position:relative;
+  overflow:hidden;
+  width: 85%;
+  height:160px;
+  margin-left:70px;
+  margin-right: 50px;
+}
+
+/*
+  root element for scrollable items. Must be absolutely positioned
+  and it should have a extremely large width to accommodate scrollable items.
+  it's enough that you set width and height for the root element and
+  not for this element.
+*/
+.scrollable .items {
+  /* this cannot be too large */
+  width:20000em;
+  position:absolute;
+}
+
+/*
+  a single item. must be floated in horizontal scrolling.
+  typically, this element is the one that *you* will style
+  the most.
+*/
+.items div {
+  float:left;
+}
+
+.element{
+	display: none;
+}
+
+.arrow {
+  float:right;
+	margin-right: 50px;
+	margin-top:10px;
+}
+
+.text {
+  padding: 20px;
+}
+
+.text p{
+  width:400px;
+  float:left;
+}
+
+.clickable_top {
+  margin-left:0px;
+  margin-right:0px;
+  margin-top:0px;
+  height: 30px;
+  background-image: url(../images/arrow_down.png);
+  background-position:right center;
+  background-repeat:no-repeat;
+	cursor:pointer;
+}
+
+.clickable_top:hover {
+  background: rgb(7, 137, 195);
+  background: rgba(7, 137, 195, 0.9);
+	background-image: url(../images/arrow_down_black.png);
+	background-position:right center;
+	background-repeat:no-repeat;
+}
+
+#contact .content{
+  width: 650px;
+}
+
+#contact textarea {
+  width: 500px;
+  height: 200px;
+}
+
+#email_title, #email_from {
+  width: 500px
+}
+
+#contact table {
+  padding: 20px;
+	vertical-align:top;
+}
+
+#footer {
+  margin-bottom:0px;
+	margin-right:0px;
+	margin-left:0px;
+	text-align: right;
+	padding: 10px;
+  background: rgb(9, 104, 148);
+  background: rgba(9, 104, 148, 0.75);
+}
+
+#message {
+	margin-left: auto;
+	margin-right:auto;
+	width: 98%;
+	height: 60px;
+  background: rgb(90, 236, 10);
+  background: rgba(90, 236, 10, 0.5);
+  color: #FFF;
+	text-align:center;
+	vertical-align:top;
+}
+
+#facebook {
+  float:right;
+	margin-top: 30px;
+	margin-right: 20px;
+}

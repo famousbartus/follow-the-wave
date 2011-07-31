@@ -1,0 +1,20 @@
+- if current_user
+  Welcome #{current_user.name} 
+  = link_to "Sign Out", signout_path
+- else
+  = link_to "Sign in with facebook", "/auth/facebook"
+
+%table{:style => "margin-left: 10px; margin-top:50px;"}
+  - form_for :picture, @picture, :url => new_panel_path, :html => { :multipart => true } do |form|
+    %tr
+      %td= form.label :image
+      %td= form.file_field :image
+    %tr
+      %td= form.label :description
+      %td= form.text_field :description, :size => 40
+    %tr
+      %td= form.label :type
+      %td= form.select :picture_type, ['website', '3d', 'poster', 'wallpaper', 'logo']
+    %%tr
+      %td
+      %td= form.submit

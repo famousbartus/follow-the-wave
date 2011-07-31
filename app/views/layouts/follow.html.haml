@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+%html
+  %head
+    %meta{:'http-equiv' => "Content-Ttpe", :content => "application/xhtml+xml; charset=utf-8"}
+      %title Follow the Wave
+    = javascript_include_tag "jquery-1.4.4.min", "jquery-ui-1.8.14.custom.min", "jquery.placeholder"
+    = javascript_include_tag "http://cdn.jquerytools.org/1.2.5/tiny/jquery.tools.min.js"
+    = stylesheet_link_tag "follow", "jquery-ui-1.8.14.custom"
+    <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>
+    %link{ :rel => "shortcut icon", :type => "image/x-icon", :href => "/images/favicon.gif"}
+
+  %body
+    #logo= image_tag 'logo.png'
+
+    #facebook
+      <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FFollow-the-wave%2F144765318938873&amp;width=292&amp;colorscheme=light&amp;show_faces=false&amp;border_color&amp;stream=false&amp;header=false&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:62px;" allowTransparency="true"></iframe>
+
+    #menu
+      %ul
+        %li= link_to_function 'about', "fam_slide('#about', true);"
+        %li= link_to_function 'websites', "fam_slide('#websites', true);"
+        %li= link_to_function 'wallpapers', "fam_slide('#wallpapers', true);"
+        %li= link_to_function 'logos', "fam_slide('#logos', true);"
+        %li= link_to_function 'posters', "fam_slide('#posters', true);"
+        %li= link_to_function '3d graphics', "fam_slide('#threeds', true);"
+        %li= link_to 'contact', :controller => :main, :action => :index, :anchor => 'contact'
+
+    #content
+      = yield
+
+    #footer
+      copyright 2011 Bartosz Michalski
+      
+:javascript
+  function fam_slide(id, from_menu) {
+    $(id + ' .content .element').slideToggle('fast', function() {
+      if($(id + ' .element').css('display') == 'block') {
+        $(id + ' .clickable_top').css('background-image',"url(../images/arrow_up.png)");
+        $(id + ' .clickable_top').hover(
+          function() {
+            $(id + ' .clickable_top').css('background-image',"url(../images/arrow_up_black.png)");
+          }, function() {
+            $(id + ' .clickable_top').css('background-image',"url(../images/arrow_up.png)");
+          }
+        );
+      }
+      else {
+        $(id + ' .clickable_top').css('background-image',"url(../images/arrow_down.png)");
+        $(id + ' .clickable_top').hover(
+          function() {
+            $(id + ' .clickable_top').css('background-image',"url(../images/arrow_down_black.png)");
+          }, function() {
+            $(id + ' .clickable_top').css('background-image',"url(../images/arrow_down.png)");
+          }
+        );
+      }
+      if(from_menu == true) {
+        location.hash = id;
+      }
+    });
+  }

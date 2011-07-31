@@ -1,0 +1,135 @@
+- if @message
+  #message
+    %h3= @message
+
+#about
+  .content
+    .clickable_top{:style => "background-image: url(../images/arrow_up.png);"}
+      = image_tag "icons/about-06.png", :class => "header"
+    .horizontal-lined
+    .element{:style => "display:block;"}
+      .text
+        %p
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          %br
+          %br
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+          It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      = image_tag "icons/wave1.png", :class => "wave"
+
+#posters
+  .content
+    .clickable_top
+      = image_tag "icons/posters-02.png", :class => "header"
+    .element
+      .text
+        %p
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          %br
+          %br
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+          It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      = render :partial => "gallery", :locals => {:pictures => @pictures[:posters]}
+
+#logos
+  .content
+    .clickable_top
+      = image_tag "icons/logos-05.png", :class => "header"
+    .element
+      = render :partial => "gallery", :locals => {:pictures => @pictures[:logos]}
+
+#websites
+  .content
+    .clickable_top
+      = image_tag "icons/websites-03.png", :class => "header"
+    .element
+      = render :partial => "gallery", :locals => {:pictures => @pictures[:websites]}
+
+#threeds
+  .content
+    .clickable_top
+      = image_tag "icons/3d-07.png", :class => "header"
+    .element
+      = render :partial => "gallery", :locals => {:pictures => @pictures[:threeds]}
+
+#wallpapers
+  .content
+    .clickable_top
+      = image_tag "icons/wallpapers-08.png", :class => "header"
+    .element
+      = render :partial => "gallery", :locals => {:pictures => @pictures[:wallpapers]}
+
+#contact
+  .content
+    = image_tag "icons/contact-04.png", :class => "header"
+    %h3 Feel free to mail me. 
+    #contact_partial
+      = render :partial => "contact"
+
+:javascript
+  $(document).ready(function(){
+    $('#about .clickable_top').hover(
+      function() {
+        $('#about .clickable_top').css('background-image',"url(../images/arrow_up_black.png)");
+      }, function() {
+        $('#about .clickable_top').css('background-image',"url(../images/arrow_up.png)");
+      }
+    );
+
+    $('#about .clickable_top').click(function() {
+      fam_slide('#about', false);
+    });
+
+    $('#posters .clickable_top').click(function() {
+      fam_slide('#posters', false);
+    });
+
+    $('#logos .clickable_top').click(function() {
+      fam_slide('#logos', false);
+    });
+
+    $('#wallpapers .clickable_top').click(function() {
+      fam_slide('#wallpapers', false);
+    });
+
+    $('#websites .clickable_top').click(function() {
+      fam_slide('#websites', false);
+    });
+
+    $('#threeds .clickable_top').click(function() {
+      fam_slide('#threeds', false);
+    });
+
+  });
+
+  $(".gallery img").hover(function() {
+    $(this).css({'z-index' : '10'}); /*Add a higher z-index value so this image stays on top*/ 
+    $(this).addClass("hover").stop() /* Add class of "hover", then stop animation queue buildup*/
+    .animate({
+      marginTop: '5px', /* The next 4 lines will vertically align this image */ 
+      marginLeft: '3px',
+      top: '30%',
+      left: '30%',
+      width: '140px', /* Set new width */
+      height: '140px', /* Set new height */
+      padding: '5px'
+    }, 200); /* this value of "200" is the speed of how fast/slow this hover animates */
+  } , function() {
+    $(this).css({'z-index' : '0'}); /* Set z-index back to 0 */
+    $(this).removeClass("hover").stop()  /* Remove the "hover" class , then stop animation queue buildup*/
+    .animate({
+      marginTop: '25', /* Set alignment back to default */
+      marginLeft: '20',
+      width: '110px', /* Set width back to default */
+      height: '110px', /* Set height back to default */
+      padding: '0px'
+    }, 400);
+  });
+
+  // execute your scripts when the DOM is ready. this is mostly a good habit
+  $(function() {
+    // initialize scrollable
+    $(".scrollable").scrollable();
+  });

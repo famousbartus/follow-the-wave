@@ -1,0 +1,17 @@
+%table
+  - form_for :email, :url => {:action => :send_email} do |form|
+    %tr
+      %td To:
+      %td= mail_to "famousbartus@gmail.com"
+    %tr
+      %td= form.label :from, "Your email:"
+      %td= form.text_field :from
+    %tr
+      %td= form.label :title, "Title:"
+      %td= form.text_field :title
+    %tr
+      %td
+      %td= form.text_area :body
+    %tr
+      %td
+      %td= form.submit "Send"
