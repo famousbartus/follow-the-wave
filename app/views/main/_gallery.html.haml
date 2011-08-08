@@ -10,7 +10,7 @@
         - number.times do
           %div
             - pictures[i..i+4].each do |picture|
-              = link_to_remote image_tag(picture.image.url), {:url => {:action => :image, :id => picture.id, :method => :get}}
+              = link_to_remote image_tag(picture.image.url(:medium)), {:url => {:action => :image, :id => picture.id, :method => :get}}
           - i = i+5
 
     %a.next_button.next.browse.left
