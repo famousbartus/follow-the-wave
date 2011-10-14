@@ -24,6 +24,8 @@
         %li= link_to_function 'posters', "fam_slide('#posters', true);"
         %li= link_to_function '3d graphics', "fam_slide('#threeds', true);"
         %li= link_to 'contact', :controller => :main, :action => :index, :anchor => 'contact'
+        
+        %li{:style => "float:right;"}= link_to 'look at my CV', "BartoszMichalski-cv-en.pdf"
 
     #content
       = yield
