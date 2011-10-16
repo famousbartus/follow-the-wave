@@ -6,4 +6,14 @@ class Picture < ActiveRecord::Base
   named_scope :threeds, :conditions => {:picture_type => "3d"}
   named_scope :logos, :conditions => {:picture_type => "logo"}
   named_scope :posters, :conditions => {:picture_type => "poster"}
+  
+  def width
+    dimensions = Paperclip::Geometry.from_file(self.image.to_file(:original))
+    return width = dimensions.width
+  end
+  
+  def height
+    dimensions = Paperclip::Geometry.from_file(self.image.to_file(:original))
+    return height = dimensions.height
+  end 
 end
