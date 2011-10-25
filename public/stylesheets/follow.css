@@ -129,8 +129,8 @@ li{
 	z-index:10;
 }
 
-.wave {
-  margin: 50px 30px 50px 80px;
+#wave {
+  margin: 30px 30px 10px 10px;
 }
 
 .horizontal-line {
@@ -229,12 +229,13 @@ img.btn_close {
 }
 
 .text {
-  padding: 20px;
+	margin-top:50px;
+	min-height:300px;
 }
 
 .text p{
-  width:400px;
-  float:left;
+  width:360px;
+	padding-right:15px;
 }
 
 .clickable_top {
@@ -300,4 +301,9 @@ img.btn_close {
   float:right;
 	margin-top: 30px;
 	margin-right: 20px;
+}
+
+#me {
+	float:left;
+	padding: 0 20px 20px 20px;
 }

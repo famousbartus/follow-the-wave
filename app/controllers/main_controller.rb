@@ -3,11 +3,11 @@ class MainController < ApplicationController
 
   def index
     @pictures = {
-      :wallpapers => Picture.wallpapers,
-      :websites => Picture.websites,
-      :logos => Picture.logos,
-      :posters => Picture.posters,
-      :threeds => Picture.threeds }
+      :wallpapers => Picture.wallpapers.reverse,
+      :websites => Picture.websites.reverse,
+      :logos => Picture.logos.reverse,
+      :posters => Picture.posters.reverse,
+      :threeds => Picture.threeds.reverse }
   end
 
   def image
@@ -21,11 +21,11 @@ class MainController < ApplicationController
     mail = Kontakt.create_send_email_to_me(from, title, body)
     Kontakt.deliver(mail)
     @pictures = {
-      :wallpapers => Picture.wallpapers,
-      :websites => Picture.websites,
-      :logos => Picture.logos,
-      :posters => Picture.posters,
-      :threeds => Picture.threeds }
+      :wallpapers => Picture.wallpapers.reverse,
+      :websites => Picture.websites.reverse,
+      :logos => Picture.logos.reverse,
+      :posters => Picture.posters.reverse,
+      :threeds => Picture.threeds.reverse }
     @message = "Your email was sent."
     render :action => :index
   end

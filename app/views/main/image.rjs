@@ -1,2 +1,2 @@
 html = render :partial => "image"
-page << dialog({ :html => html }, { :width => @picture.width+50, :height => @picture.height+80, :title => @picture.description, :open => "jQuery.placeholder.backwardsCompatibility();" })
+page << dialog({ :html => html }, { :width => @picture.width+50, :height => @picture.height+80, :open => "jQuery.placeholder.backwardsCompatibility();" })

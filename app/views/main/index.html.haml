@@ -1,14 +1,37 @@
 - if @message
   #message
     %h3= @message
-
+.content
+  = image_tag "wave-01.png", :id => "wave"
 #about
   .content
     .clickable_top{:style => "background-image: url(../images/arrow_up.png);"}
       = image_tag "icons/about-06.png", :class => "header"
-    .horizontal-lined
     .element{:style => "display:block;"}
-      = image_tag "wave-01.png", :class => "wave"
+      #about{:style => "min-height:300px;"}
+        = image_tag "me.png", :id => "me"      
+        .text
+          %p{:style => "width:90%;padding-top:10px;"}
+            %b Bartek Michalski
+          %p{:style => "float:left;padding-bottom:0px;"}
+            My passion is computer graphics. Create posters, flyers, 3d models, designs websites, logos, animations as well as visual 
+            identification is something that not only I enjoy but something that I developed.
+            I created a wave, see it! The wave is small but over time will become a storm.
+            %br
+            %br
+            %br
+            If you are interested in collaboration with me, please write to:
+          %p{:style => "float:left;"}
+            Moją pasją jest grafika komputerowa. Tworzenie plakatów, ulotek, modeli 3d, projektów stron internetowych, logo, animacji jak 
+            i identyfikacji wizualnych to coś co nie tylko sprawia mi przyjemność ale coś co mnie rozwija.
+            Stworzyłem falę, zobacz ją! Fala jest niewielka ale z czasem przerodzi się w sztorm.
+            %br
+            %br
+            Jeżeli interesuje Cię współpraca ze mną pisz na:
+            %br
+            %br
+          %p{:style => "float:left;"}
+            %b famousbartus@gmail.com
 
 #posters
   .content
