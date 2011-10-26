@@ -43,7 +43,7 @@ ul{
   margin-left:20px;
   padding-right:0px;
 	padding-bottom: 50px;
-	padding-top:10px;
+	padding-top:7px;
 }
 
 li{
@@ -231,11 +231,17 @@ img.btn_close {
 .text {
 	margin-top:50px;
 	min-height:300px;
+	overflow: auto;
+}
+
+.text li{
+	width:auto;
+	clear:both;
 }
 
 .text p{
-  width:360px;
-	padding-right:15px;
+	max-width:360px;
+  padding-right:15px;
 }
 
 .clickable_top {
