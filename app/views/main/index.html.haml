@@ -6,7 +6,7 @@
 #about
   .content
     .clickable_top{:style => "background-image: url(../images/arrow_up.png);"}
-      = image_tag "icons/about-06.png", :class => "header"
+      = image_tag "menu/about_off.png", :class => "header"
     .element
       #about{:style => "min-height:300px;"}
         = image_tag "me.png", :id => "me"      
@@ -37,41 +37,41 @@
 #posters
   .content
     .clickable_top
-      = image_tag "icons/posters-02.png", :class => "header"
+      = image_tag "menu/posters_off.png", :class => "header"
     .element
       = render :partial => "gallery", :locals => {:pictures => @pictures[:posters], :type => "poster"}
 
 #logos
   .content
     .clickable_top
-      = image_tag "icons/logos-05.png", :class => "header"
+      = image_tag "menu/logos_off.png", :class => "header"
     .element
       = render :partial => "gallery", :locals => {:pictures => @pictures[:logos], :type => "logo"}
 
 #websites
   .content
     .clickable_top
-      = image_tag "icons/websites-03.png", :class => "header"
+      = image_tag "menu/websites_off.png", :class => "header"
     .element
       = render :partial => "gallery", :locals => {:pictures => @pictures[:websites], :type => "website"}
 
 #threeds
   .content
     .clickable_top
-      = image_tag "icons/3d-07.png", :class => "header"
+      = image_tag "menu/3d_off.png", :class => "header"
     .element
       = render :partial => "gallery", :locals => {:pictures => @pictures[:threeds], :type => "threeds"}
 
 #wallpapers
   .content
     .clickable_top
-      = image_tag "icons/wallpapers-08.png", :class => "header"
+      = image_tag "menu/wallpapers_off.png", :class => "header"
     .element
       = render :partial => "gallery", :locals => {:pictures => @pictures[:wallpapers], :type => "wallpaper"}
 
 #contact
   .content
-    = image_tag "icons/contact-04.png", :class => "header"
+    = image_tag "menu/contact_off.png", :class => "header"
     %h3 Feel free to mail me. 
     #contact_partial
       = render :partial => "contact"
