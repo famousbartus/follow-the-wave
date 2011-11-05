@@ -5,12 +5,13 @@
 
     .scrollable
       .items
-        - number = pictures.size/5 + 1
-        - i = 0
-        - number.times do
-          %div
-            - pictures[i..i+4].each do |picture|
-              = link_to_remote image_tag(picture.image.url(type)), {:url => {:action => :image, :id => picture.id, :method => :get}}
-          - i = i+5
+        - if pictures.present?
+          - number = (pictures.size/4)+1
+          - i = 0
+          - number.times do
+            %div
+              - pictures[i..i+3].each do |picture|
+                = link_to_remote image_tag(picture.image.url(type)), {:url => {:action => :image, :id => picture.id, :method => :get}}
+            - i = i+4
 
     %a.next_button.next.browse.left
