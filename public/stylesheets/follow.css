@@ -33,9 +33,9 @@ body {
 
 #menu {
 	clear:both;
-	background-image: url(../images/menuBackground.png);
+	/*background-image: url(../images/menuBackground.png);
 	background-position:top left;
-	background-repeat:repeat-x;
+	background-repeat:repeat-x;*/
 }
 
 ul{
@@ -43,13 +43,13 @@ ul{
   margin-left:20px;
   padding-right:0px;
 	padding-bottom: 50px;
-	padding-top:7px;
+	padding-top:0px;
 }
 
 li{
   list-style:none;
   float:left;
-  margin-right:30px;
+  margin-right:20px;
 }
 
 .container{
@@ -62,20 +62,57 @@ li{
 .gallery{
   width:auto;
   z-index:5;
-  height:160px;
   margin-left: 0px; 
 }
 
+.poster{
+	height:270px;
+}
+
+.logo {
+	height:210px;
+}
+
+.wallpaper {
+  height:210px;
+}
+
+.website {
+  height:205px;
+}
+
+.threeds {
+  height:205px;
+}
+
 .gallery img {
-  margin-left:20px;
-  width: 110px; height: 110px; /* Set the small thumbnail size */
+  margin-left:20px; margin-top: 25px;
   -ms-interpolation-mode: bicubic; /* IE Fix for Bicubic Scaling */
   float: left;
-  margin-top: 25px;
   border:none;
   -moz-box-shadow:0px 0px 6px #003366;
   -webkit-box-shadow:0px 0px 6px #003366;
   box-shadow:0px 0px 6px #003366;
+}
+
+.gallery.poster img{
+	width: 150px; height: 212px; /* Set the small thumbnail size */
+}
+
+.gallery.logo img{
+  width: 150px; height: 150px; /* Set the small thumbnail size */
+}
+
+.gallery.website img{
+  width: 225px; height: 150px; /* Set the small thumbnail size */
+}
+
+.gallery.threeds img{
+  width: 200px; height: 150px; /* Set the small thumbnail size */
+}
+
+.gallery.wallpaper img{
+  width: 200px; height: 150px; /* Set the small thumbnail size */
 }
 
 .prev_button{
@@ -85,7 +122,7 @@ li{
   z-index:1;
   position:absolute;
   left: 40px;
-  bottom: 50px;
+  bottom: 40%;
   background-image: url(../images/leftButton/leftButton.png);
   background-position:left top;
   background-repeat:no-repeat;
@@ -98,7 +135,7 @@ li{
   z-index:1;
   position:absolute;
   right: 50px;
-  bottom: 50px;
+  bottom: 40%;
 	background-image: url(../images/rightButton/rightButton.png);
   background-position:left top;
   background-repeat:no-repeat;
@@ -131,12 +168,6 @@ li{
 
 #wave {
   margin: 30px 30px 10px 10px;
-}
-
-.horizontal-line {
-  height:0.5px;
-	width:95%;
-	background-color:#FFF;
 }
 
 #fade { /*--Transparent background layer--*/
@@ -192,7 +223,7 @@ img.btn_close {
   position:relative;
   overflow:hidden;
   width: 85%;
-  height:160px;
+  height:100%;
   margin-left:70px;
   margin-right: 50px;
 }
@@ -312,4 +343,85 @@ img.btn_close {
 #me {
 	float:left;
 	padding: 0 20px 20px 20px;
+}
+
+/* menu */
+
+#menu li {
+	background-position:top left;
+  background-repeat:no-repeat;
+	height: 30px;
+	cursor: pointer;
+}
+
+.about_m {
+ 	  width:60px;
+ 	  background-image: url(../images/menu/about_off.png);
+}
+ 
+.about_m:hover {
+ 	  background-image: url(../images/menu/about_on.png);
+}
+ 
+.posters_m {
+ 	  width:60px;
+    background-image: url(../images/menu/posters_off.png);
+}
+ 
+.posters_m:hover {
+    background-image: url(../images/menu/posters_on.png);
+}
+ 
+.logos_m{
+ 	  width:60px;
+    background-image: url(../images/menu/logos_off.png);
+}
+ 
+.logos_m:hover {
+    background-image: url(../images/menu/logos_on.png);
+}
+
+.websites_m{
+    width:80px;
+    background-image: url(../images/menu/websites_off.png);
+}
+ 
+.websites_m:hover {
+    background-image: url(../images/menu/websites_on.png);
+}
+
+.ds_m{
+    width:90px;
+    background-image: url(../images/menu/3d_off.png);
+}
+ 
+.ds_m:hover {
+    background-image: url(../images/menu/3d_on.png);
+}
+
+.contact_m{
+    width:70px;
+    background-image: url(../images/menu/contact_off.png);
+}
+ 
+.contact_m:hover {
+    background-image: url(../images/menu/contact_on.png);
+}
+
+.wallpapers_m{
+    width:100px;
+    background-image: url(../images/menu/wallpapers_off.png);
+}
+ 
+.wallpapers_m:hover {
+    background-image: url(../images/menu/wallpapers_on.png);
+}
+
+.look_m {
+    width: 120px;
+    background-image: url(../images/menu/look_off.png);
+}
+ 
+.look_m:hover {
+    background-image: url(../images/menu/look_on.png);
 }

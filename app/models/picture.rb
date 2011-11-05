@@ -1,5 +1,11 @@
 class Picture < ActiveRecord::Base
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "174x174>" }
+  has_attached_file :image, :styles => { :medium => "300x300>", 
+                                         :thumb => "174x174>", 
+                                         :poster => "170x240>",
+                                         :logo => "170x170>",
+                                         :website => "255x170>",
+                                         :threeds => "227x170>",
+                                         :wallpaper => "227x170>"}
   
   named_scope :wallpapers, :conditions => {:picture_type => "wallpaper"}
   named_scope :websites, :conditions => {:picture_type => "website"}
